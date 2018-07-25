@@ -1,0 +1,170 @@
+<apex:page controller="AbcCommDashboardController" showHeader="false" standardStylesheets="false" sidebar="false" applyHtmlTag="false" applyBodyTag="false" docType="html-5.0">
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en">
+        <head>
+            <meta charset="utf-8" />
+            <meta http-equiv="x-ua-compatible" content="ie=edge" />
+            <title>comm_dashboard</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <style>
+                .img2
+                {	
+                	margin-top: 0px;
+                	margin-right: 30px;
+                	margin-bottom: 0px;
+                	margin-left: 0px;
+                	
+                }
+                .img
+                {
+                	margin-top: 0px;
+                	margin-right: 10px;
+                	margin-bottom: 0px;
+                	margin-left: 30px;
+                }
+                .custom_class
+                {
+                width: 200px;
+                float: left;
+                }  
+                .custom_class2
+                {
+                width: calc(100% - 200px);
+                float: left;
+                }
+                @media screen and (max-width: 472px)
+                {
+                .custom_class
+                {
+                float:left;
+                width: 100% ;
+                }
+                .custom_class2
+                {
+                float:left;
+                width:100%
+                }
+                }
+                
+            </style>
+            
+            <apex:slds />
+        </head>
+        <body>
+            <div class="slds-scope">
+                <div class="myapp">
+                    <div class="slds-grid  slds-wrap">
+                        <div class="custom_class">
+                            <div class="slds-box slds-box_x-large slds-text-align_center">
+                                <div align="center" draggable="false">
+                                    <apex:image url="https://c.ap5.content.force.com/profilephoto/7297F0000008fKg/F" height="40" width="60" />
+                                </div>
+                                <div align="center" draggable="false">
+                                    <span>   </span>
+                                    <apex:outputText value="{!$User.FirstName&' '&$User.LastName}"></apex:outputText>
+                                    <div align="center" draggable="false" style="word-break:break-word">
+                                        <apex:outputtext value="{!$Profile.Name}"></apex:outputtext>                                        
+                                    </div>
+                                    <div algin="center" draggable="false" style="word-break:break-word">   
+                                        <apex:outputtext value="{!$User.Email}"></apex:outputtext>                                         
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slds-col slds-grid slds-size_2-of-2">
+                                <div class="slds-col slds-size_2-of-2">
+                                    <div class="slds-box slds-box_x_large">
+                                        <div class="slds-theme_inverse">
+                                            <apex:outputText value="Cases Requires Action" style="font-weight: bold"/>
+                                        </div>
+                                        <div class="slds-scrollable slds-slidder" style="height:11rem">
+                                            <ul class="slds-list_dotted slds-m-top_large">
+                                                
+                                                <li>Case-1001</li> 
+                                                <li>Case-1002</li>
+                                                <li>Case-1003</li>
+                                                <li>Case-1004</li>
+                                                <li>Case-1005</li>
+                                                <li>Case-1006</li>
+                                                <li>Case-1007</li>
+                                                <li>Case-1008</li>
+                                                <li>Case-1009</li>
+                                                <li>Case-1010</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slds-col slds-grid slds-size_2-of-2">
+                                <div class="slds-col slds-size_2-of-2">
+                                    <div class="slds-box slds-box_x_large">
+                                        <div class="slds-theme_inverse">
+                                            <apex:outputText value="Recent Cases" style="font-weight: bold"></apex:outputText>
+                                        </div>   
+                                        <div class="slds-scrollable slds-slidder" style="height:11rem;">
+                                            <ul class="slds-list_dotted slds-m-top_large">
+                                                <li>Case # 01</li>
+                                                <li>Case # 02</li>
+                                                <li>Case # 03</li>
+                                                <li>Case # 04</li>
+                                                <li>Case # 05</li>
+                                                <li>Case # 06</li>
+                                                <li>Case # 07</li>
+                                                <li>Case # 08</li>
+                                                <li>Case # 09</li>
+                                                <li>Case # 10</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>   
+                        <div class="custom_class2">
+                            <div class="slds-theme_inverse">
+                                <apex:outputText value="RMA Details Database" style="font-weight: bold"></apex:outputText>
+                            </div>
+                            <div class="slds-box slds-box_x-large">
+                              
+                      			<apex:image value="{!$Resource.PieChart}" height="250" width="350" />                                     
+                              
+                               
+                                <apex:image value="{!$Resource.BarGraph}" height="250" width="350" />    
+                              
+		                        <apex:image value="{!$Resource.lineGraph}" height="250" width="350"/>
+                                <apex:image value="{!$Resource.BarGraph}" height="250" width="350"/>
+                                <apex:image value="{!$Resource.lineGraph}" height="250" width="350"/>       
+                                <apex:image value="{!$Resource.PieChart}" height="250" width="350"/>       
+                                </div>
+                            
+                            
+                            
+                            <div class="slds-col slds-grid slds-size_2-of-2">
+                                <div class="slds-col slds-size_2-of-2">
+                                    
+                                    <div class="slds-box slds-box_x_large ">
+                                        <div class="slds-theme_inverse">
+                                            <apex:outputText value="Quick Actions" style="font-weight: bold"></apex:outputText>
+                                        </div><br/>
+                                        <button class="slds-button slds-button_brand">Create New Case</button>
+                                        <button class="slds-button slds-button_brand">View All Case</button>
+                                        <button class="slds-button slds-button_brand">Install base</button>
+                                        <button class="slds-button slds-button_brand">Solution to common Problems</button>
+                                        <button class="slds-button slds-button_brand">RNA Details</button>
+                                        <button class="slds-button slds-button_brand">My Information</button>
+                                        
+                                        <!--        <apex:form >
+<apex:commandButton title="Create New Case" value="Create new case" action="{!CreateNewCase}"/>&nbsp; &nbsp;
+<apex:commandButton title="View All Case" value="View All Case" action="{!ViewAllCase}"/>&nbsp; &nbsp;                            
+<apex:commandButton title="Install Base" Value="Install Base" action="{!InstallBase}"/>&nbsp; &nbsp;
+<apex:commandButton title="Solution To Common Problems" value="Solution To Common Problems" action="{!SltnToCmmnPrblms}"/>&nbsp; &nbsp;
+<apex:commandButton title="RNA Details" value="RNA Details" action="{!RNADetails}"/>&nbsp; &nbsp;
+<apex:commandButton title="My Information" value="My Information" action="{!MyInformation}"/>&nbsp; &nbsp;
+</apex:form>-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        </body>
+    </html>
+</apex:page>

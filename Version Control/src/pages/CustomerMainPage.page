@@ -1,0 +1,15 @@
+<apex:page standardController="CustomersPizzaStore__c" extensions="CustomerMainPageController" recordSetVar="cstmr" showHeader="false">
+    <apex:form >
+                   <apex:pageblock title="CUSTOMERS" >
+                    <apex:image height="450" width="1200" value="/servlet/servlet.FileDownload?file=0157F000001Mxs5"/>
+                 
+
+                <!--	<apex:image url="{!$Resource.PIzzaStoreImage}" height="50" width="40"/> --> 
+                
+                <apex:commandbutton image="{!$Resource.Create_new_customer}"  action="{!createcustomer}" style="Margin-Left:270px" title="Create New Customer"/>
+      <apex:commandButton image="{!$Resource.Existing_Customer}" action="{!viewcustomer}" style="Margin-Left:470px" title="Existing Customers"/>
+    
+                </apex:pageblock>
+       <!--<apex:commandButton value="view customers list" action="{!view}"/>	-->
+    </apex:form>
+</apex:page>

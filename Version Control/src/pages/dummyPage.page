@@ -1,0 +1,4 @@
+<apex:page >
+    <apex:form ><apex:image value="/servlet/servlet.FileDownload?file=0157F000001MgxE"/></apex:form>
+    
+</apex:page>

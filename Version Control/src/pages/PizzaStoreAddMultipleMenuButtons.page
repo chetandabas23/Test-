@@ -1,0 +1,36 @@
+<apex:page standardController="Menu__c" extensions="PizzaStoreMenuController" recordSetVar="men" showHeader="false">
+    <style>
+        body {
+            background-image: url("https://c.ap5.content.force.com/servlet/servlet.FileDownload?file=0157F000001Mxst");
+            background-repeat:repeat;
+        }
+    </style>
+    <apex:form >
+    <apex:pageBlock title="Menu">
+        
+              <apex:pageBlockSection >    
+<apex:outputPanel layout="block" style="Margin-Left:200px">
+
+                      <apex:commandButton value="Create" action="{!createmenu}" />
+                  </apex:outputPanel>
+                  <apex:outputPanel layout="block" style="Margin-right:300px">
+    <apex:commandbutton value="View" action="{!viewmenu}"/>
+</apex:outputPanel>
+
+                    	
+
+    </apex:pageBlockSection>
+ 
+    
+       <apex:pageBlockTable value="{!men}" var="mnu" >
+           <apex:column headervalue="Item Name" value="{!mnu.Item_Name__c}" />
+           <apex:column headerValue="Item Type" value="{!mnu.Item_Type__c}"/>
+           <apex:column headervalue="Item Category" value="{!mnu.Item_category__c}"/>
+           <apex:column headervalue="Item Price" value="{!mnu.Price__c}"/>
+      </apex:pageBlockTable>
+    
+    
+      
+        </apex:pageBlock>
+        </apex:form>
+</apex:page>

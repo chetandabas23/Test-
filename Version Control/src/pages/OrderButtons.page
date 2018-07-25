@@ -1,0 +1,20 @@
+<apex:page standardController="Orders__c" extensions="OrderMultipleButtons" recordSetVar="orde">
+    <apex:form >
+        <apex:pageBlock title="Orders">
+            <apex:pageBlockSection >
+            
+                <apex:commandButton value="View Order" action="{!vieworder}" />
+                <apex:commandButton value="Create Order" action="{!createorder}"/>
+            </apex:pageBlockSection>
+             <apex:pageBlockSection >
+            <apex:pageBlockTable value="{!orde}" var="odr">
+               
+                <apex:column headervalue="Menu" value="{!odr.Menu__c}"/>
+                <apex:column headervalue="Qunatity order" value="{!odr.Quantity__c}"></apex:column>
+                <apex:column headervalue="Qunatity order" value="{!odr.Total_Amount__c}"/>            
+            </apex:pageBlockTable>
+                </apex:pageBlockSection>
+        
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

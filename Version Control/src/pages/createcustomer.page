@@ -1,0 +1,30 @@
+<apex:page controller="createcustomer">
+    <apex:form >
+    <apex:pageblock >
+        <apex:pageBlockSection >
+        <apex:pageblocktable value="{!listcustomer}" var="cstm">
+            <apex:column headerValue="Customer Name">
+                <apex:inputField value="{!cstm.Customer_NAme__c}"/>
+               
+                </apex:column>
+             <Apex:column headervalue="Address">
+             <apex:inputField value="{!cstm.Address__c}"></apex:inputField>    
+            </Apex:column>
+            <apex:column headervalue="Email">
+            <apex:inputfield value="{!cstm.Email__c}"></apex:inputfield>
+            </apex:column>
+            <apex:column headerValue="Mobile Number">
+            <apex:inputfield value="{!cstm.Mobile_Number__c}"></apex:inputfield>
+            </apex:column> 
+            </apex:pageblocktable>
+        </apex:pageBlockSection>
+        <apex:pageBlockButtons >
+           
+           
+       <apex:commandButton value="Create" action="{!savecustomer}"/>
+            <apex:commandButton value="Cancel" action="{!cancel}"/>
+        </apex:pageBlockButtons>
+        </apex:pageblock>
+    </apex:form>
+               
+</apex:page>

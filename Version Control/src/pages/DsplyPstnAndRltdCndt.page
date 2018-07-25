@@ -1,0 +1,14 @@
+<apex:page standardController="Position__c">
+    <apex:form >
+    <apex:pageBlock >
+    <apex:pageBlockTable value="{!Position__c.Candidates__r}" var="pos">
+        <apex:column headervalue="Position name" value="{!Position__c.name}"/>
+        <apex:column headerValue="candiate name" value="{!pos.Name}"/>
+        <apex:column headervalue="candidate age" value="{!pos.Age__c}"/>
+        <apex:column headervalue="candidate country" value="{!pos.Country__c}"/>
+        <apex:column headervalue="candidate eligiblity" value="{!pos.Eligiblity__c}"/>
+        <apex:column headervalue="candidate notice period" value="{!pos.Notice_Period__c}"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+        </apex:form>
+</apex:page>

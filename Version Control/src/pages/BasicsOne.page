@@ -1,0 +1,39 @@
+<apex:page >
+    <apex:pageBlock title="PAge Block">
+    <apex:pageBlockSection title="Heading" collapsible="false"> 
+    <h1>
+        Hello World!!!
+    </h1>
+        </apex:pageBlockSection>
+        <apex:pageBlockSection title="Paragraph" collapsible="True" >
+        
+        <p>
+        This is a paragraph!!!<br/>
+        Today is {!today()} <br/>
+        Todays's Day is {! day(Today())} <br/>
+        Tommorow's Day is {! day(Today() + 1)}<br/>
+        after 7 day date is {! Now() + 7}<br/>
+        Today's day  is {!Weekday(today())}
+    </p>
+        </apex:pageBlockSection>>
+    
+    
+    
+    
+    
+    </apex:pageBlock>>
+    <apex:pageBlock >
+    <apex:pageBlockSection title="Next section">
+        <h3>
+            Heading nested section!!!!
+        </h3>
+     </apex:pageBlockSection>
+        <apex:pageBlockSection title=" Nested Section 2 ">
+           <p>
+               Nested Section 2!!!!
+        
+
+    </p>
+        </apex:pageBlockSection>>
+    </apex:pageBlock>      
+</apex:page>

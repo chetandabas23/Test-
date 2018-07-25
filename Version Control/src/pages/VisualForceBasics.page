@@ -1,0 +1,18 @@
+<apex:page standardController="Position__c" >
+    <apex:form >
+    <apex:pageBlock title="Standard Controller">
+ 	
+        <apex:pageBlockSection title="Create new Position" columns="2">
+            	<apex:inputField value="{! Position__c.Name}"/> 
+            <apex:inputField value="{! Position__c.Department__c}"/>
+            <apex:inputField value="{! Position__c.Departments__c}"/> 
+            <apex:inputField value="{! Position__c.Duration__c}"/>
+            <apex:inputField value="{! Position__c.End_Date__c}"/>
+        </apex:pageBlockSection>
+        <apex:pageBlockButtons location="bottom" style="float:right" styleClass="btn btn-danger btn-md">
+                        <apex:commandButton action="{save}" value="create"  />
+        </apex:pageBlockButtons>
+
+    </apex:pageBlock>
+        </apex:form>    
+</apex:page>

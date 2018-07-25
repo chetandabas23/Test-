@@ -1,0 +1,9 @@
+<apex:page standardController="CustomersPizzaStore__c" recordSetVar="csp">
+    <apex:form >
+        <apex:pageBlock >
+        <apex:pageBlockTable value="{!csp}" var="cs">
+            <apex:column value="{!cs.Customer_NAme__c}"/>
+        </apex:pageBlockTable>
+            </apex:pageBlock>
+    </apex:form>
+</apex:page>

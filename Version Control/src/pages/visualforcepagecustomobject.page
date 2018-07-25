@@ -1,0 +1,17 @@
+<apex:page standardController="Employee__c">
+    <apex:form >
+    <apex:pageBlock title="Employee Form Page">
+        <apex:detail />
+        <apex:pageBlockSection title="New Employee Record">
+            <apex:inputField value="{! Employee__c.Name}"/>
+            <apex:inputField value="{! Employee__c.Address__c}"/>
+            <apex:inputField value="{! Employee__c.Mobile_Number__c}"/>
+            <apex:inputField value="{! Employee__c.CTC__c}"/>
+            <apex:inputField value="{! Employee__c.Dprtmnt_ID__c}"/>
+        </apex:pageBlockSection>
+        <apex:pageBlockButtons >
+        <apex:commandButton action="{! save}" value="Save"/>
+        </apex:pageBlockButtons>
+     </apex:pageBlock>
+</apex:form>
+</apex:page>

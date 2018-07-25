@@ -1,0 +1,19 @@
+<apex:page standardController="Candidate__c" showHeader="false">
+    <apex:form >
+    <apex:pageBlock title="Candidate Page">
+        <apex:detail />
+        <apex:pageBlockSection title="New Candidate stored">
+            <apex:inputField value="{! Candidate__c.Name}"/>
+            <apex:inputField value="{! Candidate__c.Age__c}"/>
+            <apex:inputField value="{! Candidate__c.Notice_Period__c}"/>
+            <apex:inputField value="{! Candidate__c.Position1__c}"/>
+            <apex.inputfield  value="{! Candidate__c.EligibleForHiring__c}"/> 
+            <apex:inputField value="{! Candidate__c.Eligiblity__c}"/>
+            <apex:inputField value="{! Candidate__c.Picture__c}"/>
+        </apex:pageBlockSection>
+        <apex:pageBlockButtons >
+        	<apex:commandButton action="{! save}" value="Create"/>
+        </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>>
+</apex:page>

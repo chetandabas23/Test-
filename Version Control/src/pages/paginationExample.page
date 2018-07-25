@@ -1,0 +1,39 @@
+<apex:page standardController="Orders__c" recordSetVar="orde">
+    <apex:form >
+    <Apex:pageblock title="Order Placed">
+          Filter:
+        <apex:selectList value="{!FilterId}" size="1">
+        <apex:selectOptions value="{!listviewoptions}"></apex:selectOptions>
+            <apex:actionSupport event="onchange" reRender="pb1"/>
+        </apex:selectList>
+    <apex:pageBlockTable value="{!Orde}" var="ord">
+        <apex:column value="{!ord.Menu__c}"></apex:column>
+        <apex:column value="{!ord.Quantity__c}"></apex:column>
+        <apex:column value="{!ord.Total_Amount__c}"></apex:column>
+        <apex:column style="color:blue" headerValue="Total Amount" value="{!ord.Total_Amount__c}"/>
+        </apex:pageBlockTable>
+    <apex:panelGrid cellpadding="2" cellspacing="2" bgcolor="olive">
+        <apex:commandButton style="color:magenta" value="|<" action="{!first}"/>
+        <apex:commandButton style="color:magenta" value="<" action="{!previous}" rendered="{!hasprevious}"/>
+        <apex:commandButton style="color:magenta" value=">" action="{!next}" rendered="{!hasnext}"/>
+        <apex:commandbutton style="color:magenta" value=">|" action="{!last}"/>
+        <apex:panelGroup >
+            <apex:outputText style="color:red" value="records/page"></apex:outputText>
+            &nbsp;
+            &nbsp;
+            <apex:selectList style="color:blue" value="{!pagesize}" size="1"></apex:selectList>
+            <apex:selectoption itemvalue="5" itemlabel="5"></apex:selectoption>
+            <apex:selectoption itemvalue="10" itemlabel="10"></apex:selectoption>
+            <apex:selectOption itemvalue="15" itemlabel="15"></apex:selectOption>
+     
+            &nbsp;
+                &nbsp;
+                <apex:commandbutton action="{!null}" style="color:purple" value="update page size"/>
+                <apex:outputText style="color:red" value="{!pagenumber} of {!ceiling(resultsize/pagesize)}"></apex:outputText>
+            
+        </apex:panelGroup>
+        </apex:panelGrid>
+        
+        </Apex:pageblock>
+    </apex:form>
+</apex:page>

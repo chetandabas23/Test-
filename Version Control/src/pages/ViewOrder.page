@@ -1,0 +1,29 @@
+<apex:page standardcontroller="Orders__c" recordSetVar="ord" extensions="OrderCstmcntrlr" >
+<apex:form >
+    <apex:pageBlock title="Order Placed" id="pb1">
+        Filter:
+        <apex:selectList value="{!FilterId}" size="1">
+        <apex:selectOptions value="{!listviewoptions}"></apex:selectOptions>
+            <apex:actionSupport event="onchange" reRender="pb1"/>
+        </apex:selectList>
+       <apex:pageBlockSection >
+            <apex:pageBlockTable value="{!ord}" var="od">
+                 <apex:column >
+            <apex:outputLink value="{!URLFOR($Action.Orders__c.Edit,od.id)}">
+            Edit
+            </apex:outputLink>
+            &nbsp;
+            <apex:outputLink value="{!URLFOR($Action.Orders__c.Delete,od.id)}">
+            Del
+            </apex:outputLink>
+        </apex:column>
+                <apex:column headervalue="Customer Name" value="{!od.Customer_Name__c}"/>
+              <!--    <apex:column headervalue="Customer Name" value="{!od.Customer_Email__c}"/>-->
+                <apex:column headervalue="Menu" value="{!od.Menu__c}"/>
+                <apex:column headervalue="Qunatity order" value="{!od.Quantity__c}"></apex:column>
+                <apex:column headervalue="Total Amount" value="{!od.Total_Amount__c}"/>            
+            </apex:pageBlockTable>
+                </apex:pageBlockSection>
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>

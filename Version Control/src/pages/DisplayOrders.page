@@ -1,0 +1,12 @@
+<apex:page standardcontroller="Order__c">
+    <apex:form >
+    <apex:pageBlock >
+	<apex:detail />
+        <apex:pageBlockSection >
+           <apex:outputField value="{! Order__c.order_placed__c}"/>
+            <apex:outputField value="{! Order__c.name}"/>  
+          <apex:outputField value="{! order__c.Products__c}"/> 
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+        </apex:form>
+</apex:page>

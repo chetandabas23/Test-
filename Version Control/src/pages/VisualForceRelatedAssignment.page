@@ -1,0 +1,11 @@
+<apex:page controller="VisualForceRelatedAssignment">
+    <apex:form >
+        <apex:pageBlock >
+        <apex:pageBlockSection >
+            <apex:commandButton action="{! gotonext}" value="Create New Employee"/>
+            <apex:commandButton action="{! gotonext1}" value="List All Departments"/>
+            <apex:commandButton action="{! gotonext2}" value="List Related Emp OF Dept."/>>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

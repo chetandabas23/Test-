@@ -1,0 +1,18 @@
+<apex:page standardController="Dprtmnts__c">
+    <apex:pageBlock title="Department">
+        <apex:pageBlockSection title="Department And Related Employee">
+            Department Id Number:{! Dprtmnts__c.Id}<br/>
+            Department Name:{! Dprtmnts__c.Name}<br/>
+            <apex:pageBlockTable value="{! Dprtmnts__c.Employees__r}" var="emply">
+                    <apex:column value="{! emply.Name}"/>
+                <apex:column value="{! emply.Address__c}"/>
+                <apex:column value="{!emply.CTC__c}"/>
+                <apex:column value="{!emply.Dprtmnt_ID__c}"/>
+                <apex:column value="{!emply.Mobile_Number__c}"/>
+                             
+            
+            </apex:pageBlockTable>
+            
+           </apex:pageBlockSection>
+    </apex:pageBlock>
+</apex:page>

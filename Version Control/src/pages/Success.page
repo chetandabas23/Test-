@@ -1,0 +1,5 @@
+<apex:page controller="position">
+    <h1>
+        You have successfully created a position
+    </h1>
+</apex:page>

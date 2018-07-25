@@ -1,0 +1,25 @@
+<apex:page standardController="contact" recordSetVar="cntcts" >
+    <apex:form >
+    <apex:pageBlock title="Contacts List" id="contacts_List">
+        Filter:
+        <apex:selectList value="{! filterId}" size="1">
+            <apex:selectOptions value="{! listViewOptions}"/>
+            <apex:actionSupport event="onchange" reRender="contacts_List"/>
+        </apex:selectList>
+        <apex:pageBlockTable value="{! cntcts}" var="ct">
+        <apex:column >
+            <apex:outputLink value="{! URLFOR($Action.Contact.Edit, ct.Id)}"> 
+            Edit </apex:outputLink>
+            &nbsp;
+            <apex:outputLink value="{! URLFOR($Action.Contact.Delete, ct.Id)}">
+            Delete </apex:outputLink>
+            </apex:column>
+            <apex:column value="{! ct.FirstName}"/>
+            <apex:column value="{! ct.LastName}"/>
+            <apex:column value="{! ct.Email}"/>
+            <apex:column value="{! ct.Account.Name}"/>
+        
+        </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

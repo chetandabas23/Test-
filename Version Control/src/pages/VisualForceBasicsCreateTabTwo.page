@@ -1,0 +1,13 @@
+<apex:page standardController="Position__c" tabstyle="Visual_force_practice_two__tab">
+    <apex:pageBlock title="Visual_force_practice_two">
+    <apex:pageBlockSection title="Section 1">
+        Position ID Number : {! Position__c.id}<br/>
+        Position Name: {! Position__c.Name}<br/>
+        Position Ctc: {! Position__c.CTC__c}<br/>
+        Position Education: {! Position__c.Education__c}<br/>
+        <apex:relatedList list="Candidates__r" pageSize="1"/>>
+        <apex:outputLabel >{! Position__c.Name }</apex:outputLabel>
+        </apex:pageBlockSection>>    
+    
+    </apex:pageBlock>>
+</apex:page>

@@ -1,0 +1,15 @@
+<apex:page standardController="Candidate__c" tabStyle="VisualForcePractice__tab">
+    <apex:pageBlock title="Assign to a new tab">
+    <apex:pageBlockSection title="Assign Tab">
+        Candidate Id Number: {! Candidate__c.Id}<br/>
+        Candidate Name: {! Candidate__c.Name}<br/>
+        Candidate Age: {! Candidate__c.Age__c}<br/>
+        Candidate Country: {!Candidate__c.Country__c}<br/>
+     
+        
+        <apex:relatedList list="offers__r" pageSize="2"/>
+        <apex:outputLabel > {! Candidate__c.Name}</apex:outputLabel>
+        <apex:outputText >This is Apex Output Text</apex:outputText>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+</apex:page>

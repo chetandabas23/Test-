@@ -1,0 +1,21 @@
+<apex:page standardController="Position__c" showHeader="true">
+    <apex:form >
+    <apex:pageBlock title="Position object">
+        <apex:pageBlockSection >
+               <apex:inputField value="{! Position__c.Name}"/>
+           <apex:inputField value="{! Position__c.Salary__c}"/>
+            <apex:inputField value="{! Position__c.Status__c}"/>
+            <apex:inputField value="{! Position__c.Sub_Status__c}"/>
+            <apex:inputField value="{! Position__c.Experience__c}"/>
+            <apex.inputfield  value="{! Position__c.Hiring_Manager1__c}"/> 
+            <apex:inputField value="{! Position__c.End_Date__c}"/>
+            <apex:inputField value="{! Position__c.Job_Description__c}"/>
+        </apex:pageBlockSection>
+        <apex:pageBlockButtons >
+        	<apex:commandButton action="{! save}" value="Create"/>
+        </apex:pageBlockButtons>
+        	
+       
+    </apex:pageBlock>>
+    </apex:form>
+</apex:page>

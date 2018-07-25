@@ -1,0 +1,16 @@
+<apex:page standardController="Dprtmnts__c" recordSetVar="Dprtmnt">
+    <apex:form >
+    <apex:pageBlock title="Department List">
+        Filter:
+        <apex:selectList value="{! FilterId}" size="1">
+            <apex:selectOptions value="{! listViewOptions}"/>
+            <apex:actionSupport event="onchange" reRender="Dprtmnts__c"/>
+       </apex:selectList>
+        <apex:pageBlockTable value="{! Dprtmnt}" var="dpt">
+            <apex:column value="{! dpt.ID}"/>
+            <apex:column value="{! dpt.Name}"/>
+
+        </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

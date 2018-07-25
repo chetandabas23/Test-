@@ -1,0 +1,8 @@
+<apex:page controller="BarChart" showHeader="false">
+   <apex:chart height="400" width="300" data="{!data}">
+    <apex:axis type="Numeric" position="left" fields="year"
+               title="year"/>
+    <apex:axis type="Category" position="bottom" fields="country" title="Country"/>
+    <apex:barSeries orientation="vertical" axis="left" xField="country" yField="year"></apex:barSeries>
+	</apex:chart>
+</apex:page>

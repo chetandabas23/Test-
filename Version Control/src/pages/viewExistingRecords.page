@@ -1,0 +1,49 @@
+<apex:page standardController="Customer__c" recordSetVar="cst" extensions="SSMSStudentController">
+    <apex:form >
+    <apex:pageblock title="Student" id="PB1">
+         Filter:
+        <apex:selectList value="{!FilterId}" size="1">
+            <apex:selectOptions value="{!listviewoptions}"></apex:selectOptions>
+            <apex:actionSupport event="onchange" reRender="PB1"/>
+            
+        </apex:selectList>
+        <apex:pageBlockSection >
+        <apex:pageBlockTable value="{!cst}" var="cs">
+            <apex:Column >
+           <apex:outputLink value="{!URLFOR($Action.Customer__c.Edit,cs.id)}">
+                Edit:
+                </apex:outputLink>
+                &nbsp;
+                <apex:outputLink value="{!URLFOR($Action.Customer__c.Delete,cs.id)}">
+                Del:
+                </apex:outputLink>
+            </apex:Column>
+            <apex:column headervalue="Student Name" value="{!cs.Student_Name__c}">
+            </apex:column>
+            <apex:column headervalue="SSN" value="{!cs.Social_Security_Number__c}">
+            </apex:column>
+            <apex:column headervalue="CCN" Value="{!cs.Credit_Card_Number__c}">
+            </apex:column>
+            <apex:Column headervalue="Parents Email Id" value="{!cs.Parents_Email_Id__c}">
+            </apex:Column>
+            <apex:column headerValue="Student Email Id" value="{!cs.Email_id__c}">
+            </apex:column>
+            <apex:column headervalue="Semester" value="{!cs.semester__c}">
+            </apex:column>
+            <apex:column headervalue="Department" value="{!cs.Department__c}">
+            </apex:column>
+            <Apex:column headervalue="Total Semester Fee" value="{!cs.Total_Semester_Fee__c}">
+            </Apex:column>
+            <apex:column headervalue="Total Media Roll up" value="{!cs.Media_Roll_up__c}">
+            </apex:column>
+            <apex:column headervalue="Media Penalties" value="{!cs.Total_Penalties__c}"/>
+            <apex:column headervalue="Total Fee Incl. Penalties and Semester" value="{!cs.Toal_Fee_Pending__c}">
+            </apex:column>
+            <apex:column headervalue="Subjects" value="{!cs.Subjects__c}"/>
+            <apex:column headervalue="Attendance" value="{!cs.Attndnc__c}"/>
+            </apex:pageBlockTable>
+        </apex:pageBlockSection>
+        </apex:pageblock>
+                    
+    </apex:form>
+</apex:page>

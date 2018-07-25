@@ -1,0 +1,12 @@
+<apex:page controller="mycontroller" tabStyle="opportunity">
+    <apex:form >
+        <apex:pageBlock title="opportunities">
+            <apex:pageBlockSection >
+            <apex:inputField value="{!opp.name}"/>
+                <apex:inputField value="{!opp.type}"/>
+                <apex:inputField value="{! opp.leadsource}"/>
+                <apex:commandButton action="{!save}" value="save"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

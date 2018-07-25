@@ -1,0 +1,17 @@
+<apex:page standardController="LoginPage__c" showHeader="false" >
+    <apex:image url="https://ap5.salesforce.com/0157F0000015evN" />
+    <apex:form >
+    <apex:pageBlock title="Login Page">
+        <apex:pageBlockSection >
+            <apex:inputField value="{! LoginPage__c.Username__c}"/><br/>
+            <apex:inputField value="{! LoginPage__c.Password__c}"/><br/>
+        </apex:pageBlockSection>
+    <apex:pageBlockButtons >
+        <apex:commandButton action="{! save}" title="Create" value="create"/>
+        <apex:commandButton action="{! cancel}" value="cancel"/>
+        
+        </apex:pageBlockButtons>
+        
+    </apex:pageBlock>
+        </apex:form>
+</apex:page>

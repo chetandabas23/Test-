@@ -1,0 +1,9 @@
+<apex:page standardController="Customer__c" extensions="SsmsMainPageController" recordSetVar="cstmr" showHeader="false">
+    <apex:form >
+        <apex:pageBlock title="Students">
+            <apex:image height="450" width="1200" value="/servlet/servlet.FileDownload?file=0157F000000mxfR"/>
+            <apex:commandButton value="Create New Record" action="{!CreateNewStudentRecord}" style="Margin-Left:120px"/>
+            <apex:commandButton value="View Existing Record" action="{!viewExistingRecords}" style="Margin-Left:320px"/>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

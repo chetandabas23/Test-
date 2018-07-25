@@ -1,0 +1,29 @@
+<apex:page standardController="CustomersPizzaStore__c" recordSetVar="cst" extensions="customercontroller">
+    <apex:form >
+    <apex:pageblock title="Customer" id="pb1">
+        Filter:
+        <apex:selectList value="{!FilterId}" size="1">
+        <apex:selectOptions value="{!listviewoptions}"></apex:selectOptions>
+        
+        <apex:actionSupport event="onchange" reRender="pb1"/>
+        </apex:selectList>
+        <apex:pageBlockSection >
+        <apex:pageblocktable value="{!cst}" var="cs">
+              <apex:column >
+            <apex:outputLink value="{!URLFOR($Action.CustomersPizzaStore__c.Edit,cs.id)}">
+                Edit:
+                </apex:outputLink>
+                  &nbsp;
+                  <apex:outputLink value="{!URLFOR($Action.CustomersPizzaStore__c.Delete,cs.id)}" rendered="true">
+                  Del:
+            </apex:outputLink>
+            </apex:column> 
+            <apex:column headerValue="Customer Name" value="{!cs.Customer_NAme__c}"></apex:column>
+                         <apex:column headervalue="Address" value="{!cs.Address__c}"></apex:column>
+            <apex:column headervalue="Email" value="{!cs.Email__c}"></apex:column>
+            <apex:column headervalue="Mobile Number" value="{!cs.Mobile_Number__c}"></apex:column>
+            </apex:pageblocktable>
+        </apex:pageBlockSection>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

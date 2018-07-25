@@ -1,0 +1,26 @@
+<apex:page controller="UpdateProductController">
+    <apex:form >
+    <apex:pageblock >
+        <apex:pageBlockSection title="Selecting product">
+            select product:
+            <apex:selectList id="l1" size="1" value="{!optlist}">
+                <apex:actionSupport event="onchange" action="{!updatePro}" reRender="pb1"/>
+                <apex:selectOptions value="{!listproduct}"></apex:selectOptions>
+            </apex:selectList>
+            
+        </apex:pageBlockSection>
+        <apex:pageBlockSection title="Product data" id="pb1" >
+        Product Name:
+            <apex:inputText value="{!proname}"/><br/>
+            Total Order:
+            <apex:inputText value="{!TotalOrder}"/><br/>
+            Unit Price:
+            <apex:inputText value="{!unitPrice}"/><br/>
+            <apex:pageBlockSectionItem >
+            <apex:commandButton action="{!updatepos}" value="update"/>
+                <apex:commandButton action="{!deletepro}" value="delete"/>
+            </apex:pageBlockSectionItem>
+        </apex:pageBlockSection>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

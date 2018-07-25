@@ -1,0 +1,12 @@
+<apex:page showHeader="false" standardController="CustomersPizzaStore__c" recordSetVar="cstmr" extensions="PizzaStoreMainPageController">
+    <apex:form >
+    <apex:pageBlock Title="Pizza Store">
+        <apex:image height="500" width="1300" value="/servlet/servlet.FileDownload?file=0157F000001MfSM"/>
+        
+            <apex:commandButton title="Customer" image="{!$Resource.Customer}" action="{!customer}" style="Margin-left:100px" />
+            <apex:commandButton image="{!$Resource.Menu}" action="{!menu}" style="Margin-left:350px" title="Menu"/>
+            <apex:commandButton image="{!$Resource.Order}" action="{!order}" style="Margin-left:450px" title="Order"/>                          
+        </apex:pageBlock>
+    </apex:form>
+               
+</apex:page>

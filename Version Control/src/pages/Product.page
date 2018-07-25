@@ -1,0 +1,15 @@
+<apex:page standardController="Product__c">
+    <apex:form >
+    <apex:pageBlock title="create new product">
+        <apex:pageBlockSection columns="2">
+            <apex:inputField value="{!Product__c.Name}"/>
+            <apex:inputField value="{!Product__c.Placed_Order__c}"/>
+            <apex:inputField value="{!Product__c.Total_Order__c}"/>
+        
+        </apex:pageBlockSection>
+        
+        <apex:commandButton action="{! save}" value="Save"></apex:commandButton>
+        <apex:pageMessages ></apex:pageMessages>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

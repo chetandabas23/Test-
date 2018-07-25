@@ -1,0 +1,25 @@
+<apex:page controller="PizzaStoreAddMultipleMenu">
+    <apex:form >
+    <apex:pageBlock >
+        <apex:pageBlockTable value="{!listmenu}" var="mnu">
+            <apex:column headervalue="Item Name" >
+                <apex:inputField value="{!mnu.Item_Name__c}"/>
+            </apex:column>
+            <apex:column headervalue="Item Category">
+                <apex:inputField value="{!mnu.Item_category__c}"/>
+            </apex:column>
+            <apex:column headervalue="Item Type">
+                <apex:inputField value="{!mnu.Item_Type__c}"/>
+            </apex:column>
+            <apex:column headervalue="Item Price">
+            <apex:inputField value="{!mnu.Price__c}"/>
+            </apex:column>
+        
+        </apex:pageBlockTable>
+        <apex:pageBlockButtons >
+        <apex:commandButton value="Add One More Item" action="{!addmenu}"/>
+            <apex:commandButton value="Save Menu" action="{!savemenu}"/>
+        </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

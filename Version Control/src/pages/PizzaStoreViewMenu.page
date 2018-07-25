@@ -1,0 +1,28 @@
+<apex:page standardcontroller="Menu__c" recordSetVar="menu" extensions="PizzaStoreCstmCntrlr">
+<apex:form >
+    <apex:pageBlock title="Available Menu">
+        Filter:
+        <apex:selectList value="{!FilterId}" size="1">
+        <apex:selectOptions value="{!listviewoptions}"></apex:selectOptions>
+            <apex:actionSupport event="onchange" reRender="Menu__c"/>
+        </apex:selectList>
+    <apex:pageBlockTable value="{!menu}" var="mnu">
+         <apex:column >
+            <apex:outputLink value="{!URLFOR($Action.Menu__c.Edit,mnu.id)}">
+               
+            Edit
+            </apex:outputLink>
+            &nbsp;
+            <apex:outputLink value="{!URLFOR($Action.Menu__c.Delete,mnu.id)}">
+            Del
+            </apex:outputLink>
+        </apex:column>
+        <Apex:column value="{!mnu.name}"></Apex:column>
+        <apex:column value="{!mnu.Item_Name__c}"></apex:column>
+        <apex:column value="{!mnu.Item_category__c}"></apex:column>
+        <apex:column value="{!mnu.Item_Type__c}"></apex:column>
+        <apex:column value="{!mnu.Price__c}"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>
